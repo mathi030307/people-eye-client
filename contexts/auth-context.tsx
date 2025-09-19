@@ -34,7 +34,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
 
   const login = async (email: string, password: string): Promise<boolean> => {
     try {
-      const res = await fetch("http://localhost:3131/api/auth/login", {
+      const res = await fetch("https://people-eye-server.onrender.com/api/auth/login", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email, password }),
@@ -55,7 +55,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
 
   const register = async (userData: Omit<User, "_id"> & { password: string }): Promise<boolean> => {
     try {
-      const res = await fetch("http://localhost:3131/api/auth/register", {
+      const res = await fetch("https://people-eye-server.onrender.com/api/auth/register", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(userData),
