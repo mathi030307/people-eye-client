@@ -20,7 +20,7 @@ export function useReports() {
       (formData.videos || []).forEach((vid: File) => data.append("videos", vid));
       (formData.audioNotes || []).forEach((aud: File) => data.append("audioNotes", aud));
 
-      const res = await fetch("http://localhost:3131/api/reports", {
+      const res = await fetch("https://people-eye-server.onrender.com/api/reports", {
         method: "POST",
         body: data,
       });
